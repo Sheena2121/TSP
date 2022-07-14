@@ -88,7 +88,7 @@ class Tour:
         new_node = Node(p)
 
     
-        if self.head.point == None:            
+        if self.head.point is None:            
             self.head = new_node
             self.tail = new_node
             new_node.next_node = self.head;
@@ -115,7 +115,7 @@ class Tour:
                 #reassign the next node
                 curr_node = curr_node.next_node
                 
-                if curr_node == self.head:
+                if curr_node is self.head:
                     break
             
             print("smallest distance")
@@ -152,7 +152,7 @@ class Tour:
             curr_node.point.drawTo(curr_node.next_node.point)
             print("hi from line 126!")
             curr_node = curr_node.next_node
-            if curr_node == self.head:
+            if curr_node is self.head:
                 print("hi from line 129")
                 break
 
@@ -177,7 +177,7 @@ class Tour:
             print(curr_node.point.distanceTo(curr_node.next_node.point))
             totalDistance += curr_node.point.distanceTo(curr_node.next_node.point)     
             curr_node = curr_node.next_node        
-            if curr_node == self.head:
+            if curr_node is self.head:
                 print("hi from line 179")
                 print ("total distance is")
                 print(totalDistance)
@@ -189,7 +189,7 @@ class Tour:
     def insertSmallest(self, p):
         new_node = Node(p)                       
         # adds the node to the list if it is empty.
-        if self.head.point == None:            
+        if self.head.point is None:            
             self.head = new_node
             
             self.tail = new_node
